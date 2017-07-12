@@ -14,6 +14,9 @@ Item {
     property alias player: player
     property alias videoOutput: videoOutput
     width: 640
+    antialiasing: false
+    property alias pane: pane
+    property alias image: image
 
     UvcAcquisition {
         id: acq
@@ -28,15 +31,34 @@ Item {
         spacing: 0
         anchors.fill: parent
 
+        CameraControls {
+            Layout.minimumWidth: 240
+            Layout.fillHeight: true
+            acq: acq
+        }
+
         Pane {
-            x: 0
-            width: 510
+            x: 220
+            width: 400
             bottomPadding: 5
             rightPadding: 5
             leftPadding: 5
             topPadding: 5
             Layout.fillWidth: true
             Layout.fillHeight: true
+            Image {
+                id: image
+                x: 8
+                y: 8
+                width: 80
+                height: 80
+                sourceSize.height: 192
+                sourceSize.width: 192
+                fillMode: Image.PreserveAspectFit
+                z: 3
+                source: "images/chaos_logo.png"
+            }
+
             VideoOutput {
                 id: videoOutput
                 anchors.fill: parent
@@ -46,28 +68,15 @@ Item {
         }
 
         Pane {
+            id: pane
             width: 130
             Layout.minimumWidth: 130
             Layout.fillHeight: true
             visible: acq.cci.supportsRadiometry
 
             RangeDisplay {
-                anchors.rightMargin: 12
-                anchors.bottomMargin: 0
-                anchors.leftMargin: -12
-                anchors.topMargin: 116
                 anchors.fill: parent
                 acq: acq
-            }
-
-            Image {
-                id: chaosLogo
-                x: -12
-                y: 0
-                width: 106
-                height: 100
-                fillMode: Image.PreserveAspectFit
-                source: "images/images/chaos_logo.png"
             }
         }
     }

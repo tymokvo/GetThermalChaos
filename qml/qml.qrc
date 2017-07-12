@@ -17,5 +17,6 @@
     </qresource>
     <qresource prefix="/images">
         <file>images/brand-logo.png</file>
+        <file>images/chaos_logo.png</file>
     </qresource>
 </RCC>
