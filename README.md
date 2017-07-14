@@ -1,4 +1,6 @@
-`GetThermal` is a cross-platform thermal camera viewer application.
+`GetThermalChaos` is a cross-platform thermal camera viewer application.
+
+It is a fork of the original GroupGets one with a different interface for a specific application. You likely shouldn't be using it. Go fork the original instead.
 
 ![GetThermal screenshot](https://groupgets-files.s3.amazonaws.com/lepton/getthermal_app.png)
 
