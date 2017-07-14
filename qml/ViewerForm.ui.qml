@@ -15,30 +15,32 @@ Item {
     property alias videoOutput: videoOutput
     width: 640
 
-    UvcAcquisition {
-        id: acq
-    }
-
-    UvcVideoProducer {
-        id: player
-        uvc: acq
-    }
 
     RowLayout {
+        opacity: 1
         spacing: 0
         anchors.fill: parent
 
         Pane {
             x: 0
             width: 510
+            opacity: 1
             bottomPadding: 5
             rightPadding: 5
             leftPadding: 5
             topPadding: 5
             Layout.fillWidth: true
             Layout.fillHeight: true
+            background: Rectangle {
+                anchors.fill: parent
+                color: "#000000"
+            }
+
             VideoOutput {
                 id: videoOutput
+                x: 0
+                y: 0
+                antialiasing: true
                 anchors.fill: parent
                 fillMode: VideoOutput.PreserveAspectFit
                 source: player
@@ -50,6 +52,10 @@ Item {
             Layout.minimumWidth: 130
             Layout.fillHeight: true
             visible: acq.cci.supportsRadiometry
+            background: Rectangle {
+                anchors.fill: parent
+                color: "#000000"
+            }
 
             RangeDisplay {
                 anchors.rightMargin: 12
@@ -66,9 +72,24 @@ Item {
                 y: 0
                 width: 106
                 height: 100
+                antialiasing: true
                 fillMode: Image.PreserveAspectFit
                 source: "images/images/chaos_logo.png"
             }
+
         }
     }
+
+
+    UvcAcquisition {
+        id: acq
+    }
+
+
+    UvcVideoProducer {
+        id: player
+        uvc: acq
+    }
+
+
 }

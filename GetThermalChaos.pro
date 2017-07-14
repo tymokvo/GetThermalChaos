@@ -16,7 +16,7 @@ DebugBuild {
     DESTDIR  = $${OUT_PWD}/release
 }
 
-QT += qml quick multimedia
+QT += qml quick multimedia quickcontrols2
 
 QT_CONFIG -= no-pkg-config
 CONFIG += c++11 \

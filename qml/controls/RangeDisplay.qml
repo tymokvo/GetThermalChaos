@@ -57,6 +57,7 @@ Item {
             anchors.leftMargin: 0
             anchors.top: parent.top
             anchors.topMargin: 0
+            color: "#ffffff"
         }
 
         Label {
@@ -65,6 +66,7 @@ Item {
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
             anchors.leftMargin: 0
+            color: "#ffffff"
         }
 
         Label {
@@ -74,6 +76,7 @@ Item {
             anchors.leftMargin: 0
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 0
+            color: "#ffffff"
         }
 
         MouseArea {
